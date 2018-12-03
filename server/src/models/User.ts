@@ -1,6 +1,6 @@
-import bcrypt from 'bcrypt-nodejs';
-import crypto from 'crypto';
-import mongoose from 'mongoose';
+import bcrypt from "bcrypt-nodejs";
+import crypto from "crypto";
+import mongoose from "mongoose";
 
 export type UserModel = mongoose.Document & {
   email: string;
@@ -59,9 +59,9 @@ const userSchema = new mongoose.Schema(
 /**
  * Password hash middleware.
  */
-userSchema.pre('save', function save(next) {
+userSchema.pre("save", function save(next) {
   const user = this;
-  if (!user.isModified('password')) {
+  if (!user.isModified("password")) {
     return next();
   }
   bcrypt.genSalt(10, (err, salt) => {
@@ -104,12 +104,12 @@ userSchema.methods.gravatar = function(size: number) {
     return `https://gravatar.com/avatar/?s=${size}&d=retro`;
   }
   const md5 = crypto
-    .createHash('md5')
+    .createHash("md5")
     .update(this.email)
-    .digest('hex');
+    .digest("hex");
   return `https://gravatar.com/avatar/${md5}?s=${size}&d=retro`;
 };
 
 // export const User: UserType = mongoose.model<UserType>('User', userSchema);
-const User = mongoose.model('User', userSchema);
+const User = mongoose.model("User", userSchema);
 export default User;

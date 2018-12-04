@@ -27,12 +27,19 @@ type createOrderFunction = (items: Item[], customer: any) => String;
 const orderCollectionRef = firebaseDb.collection(COLLECTION_NAME);
 
 export async function createOrder(items: Item[], customer: any) {
+  // TODO: usar customer
   const orderRef = await orderCollectionRef.add({
     items,
-    customer,
+    status: OrderStatus.waiting,
   });
 
   return orderRef.id;
+}
+
+export enum OrderStatus {
+  canceled = -1,
+  waiting = 0,
+  approved = 1,
 }
 
 export async function getAllOrders() {

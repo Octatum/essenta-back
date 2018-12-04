@@ -37,25 +37,40 @@ const orderCheckSchema = checkSchema({
       errorMessage: "El carrito debe contener al menos un objeto",
       options: { min: 1 },
     },
+    optional: false,
   },
   "items.*.id": {
     in: ["body"],
+    errorMessage: "Cada producto debe contener un identificador.",
     isString: {
       errorMessage: "El identificador de un producto debe ser un string.",
     },
+    optional: false,
   },
   "items.*.colorId": {
     in: ["body"],
+    errorMessage: "Cada producto debe contener un identificador de color.",
     isString: {
       errorMessage: "El identificador de un color debe ser un string.",
     },
+    optional: false,
+  },
+  "items.*.fraganceId": {
+    in: ["body"],
+    errorMessage: "Cada producto debe contener un identificador de fragancia.",
+    isString: {
+      errorMessage: "El identificador de una fragancia debe ser un string.",
+    },
+    optional: false,
   },
   "items.*.amount": {
     in: ["body"],
+    errorMessage: "Cada producto debe contener una cantidad.",
     isInt: {
       errorMessage: "El valor de amount debe ser numérico.",
     },
     toInt: true,
+    optional: false,
   },
 });
 

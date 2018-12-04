@@ -9,8 +9,32 @@
     "logs": "firebase functions:log"
   },
   "dependencies": {
-    "firebase-admin": "~6.0.0",
-    "firebase-functions": "^2.1.0"
+    "async": "^2.6.1",
+    "bcrypt-nodejs": "^0.0.3",
+    "bluebird": "^3.5.3",
+    "body-parser": "^1.18.3",
+    "compression": "^1.7.3",
+    "connect-mongo": "^2.0.3",
+    "dotenv": "^4.0.0",
+    "errorhandler": "^1.5.0",
+    "express": "^4.16.4",
+    "express-flash": "0.0.2",
+    "express-session": "^1.15.6",
+    "express-validator": "^4.3.0",
+    "fbgraph": "^1.4.4",
+    "firebase-admin": "^6.3.0",
+    "firebase-functions": "^2.1.0",
+    "lodash": "^4.17.5",
+    "lusca": "^1.6.1",
+    "mongoose": "^4.13.17",
+    "nodemailer": "^4.7.0",
+    "passport": "^0.4.0",
+    "passport-facebook": "^2.1.1",
+    "passport-local": "^1.0.0",
+    "pug": "^2.0.3",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.2",
+    "winston": "^2.4.4"
   },
   "private": true
 }

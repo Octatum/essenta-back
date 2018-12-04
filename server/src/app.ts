@@ -59,7 +59,7 @@ const orderCheckSchema = checkSchema({
   },
 });
 
-app.get("/orders/get", orderController.allOrders);
+app.get("/orders", orderController.allOrders);
 app.post("/orders", orderCheckSchema, orderController.createOrder);
 
 export default app;

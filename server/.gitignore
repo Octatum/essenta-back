@@ -36,5 +36,8 @@ Thumbs.db
 
 # Ignore built ts files
 dist/**/*
+dist/
+dist
 
 src/util/*.key.json
+.vscode

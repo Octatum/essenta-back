@@ -1,6 +1,5 @@
 import * as admin from "firebase-admin";
 import service from "./essenta-back.key.json";
-console.log(service);
 
 admin.initializeApp({
   credential: admin.credential.cert(service),

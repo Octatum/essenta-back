@@ -3,17 +3,20 @@ import { validationResult } from "express-validator/check";
 import ip from "ip";
 import FormData from "form-data";
 import fetch, { Headers } from "node-fetch";
+import * as functions from "firebase-functions";
 
 import * as OrderModel from "../models/Order";
 import { Buffer } from "buffer";
 
 export async function allOrders(req: Request, res: Response): Promise<any> {
+  console.log("Get orders");
   const orders = await OrderModel.getAllOrders();
 
   res.json(orders);
 }
 
 export async function createOrder(req: Request, res: Response): Promise<any> {
+  console.log("Create order");
   const errors = validationResult(req);
 
   if (!errors.isEmpty()) {
@@ -25,6 +28,7 @@ export async function createOrder(req: Request, res: Response): Promise<any> {
   try {
     const orderId: String = await OrderModel.createOrder(items, customer);
     const totalCost: Number = 1;
+    console.log("Getting Redirection URL");
     const redirectionUrl: String = await getRedirectionUrl(orderId, totalCost);
     res.json({ orderId, redirectionUrl });
   } catch (error) {
@@ -35,8 +39,8 @@ export async function createOrder(req: Request, res: Response): Promise<any> {
 async function getRedirectionUrl(orderId: String, totalCost: Number) {
   const formData = new FormData();
   const headers = new Headers();
-  const username = process.env.TP_CLIENT_ID;
-  const password = process.env.TP_CLIENT_PASSWORD;
+  const username = functions.config().toditopay.user;
+  const password = functions.config().toditopay.pass;
   const hostUrl = "https://www.toditocash.com/tpayQA/redirect.php";
 
   // Preparar datos y hacer encode como Form (necesario para TP)

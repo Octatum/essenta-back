@@ -6,7 +6,7 @@ content-type: application/json
 {
 	"items": [{
 			"id": "5YPO1Smo3mcMoqkMcGOK0W",
-			"amount": "1",
+			"amount": "23",
 			"colorId": "4Cjuek1kdqgGswW0iOwawc",
       "fraganceId": "52fomcNjNKAimUeOuM2QOq"
 		},

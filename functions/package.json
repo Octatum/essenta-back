@@ -1,7 +1,7 @@
 {
-  "name": "express-typescript-starter",
+  "name": "essenta-express-typescript",
   "version": "0.1.0",
-  "description": "A starting point for Node.js express apps with TypeScript",
+  "description": "Essenta's order server",
   "repository": {
     "type": "git",
     "url": "https://github.com/Microsoft/TypeScript-Node-Starter"

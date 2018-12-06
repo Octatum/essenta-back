@@ -2,9 +2,12 @@
 **/*.js
 **/*.js.map
 
+lib
 # Typescript v1 declaration files
 typings/
 
 dist
 src/util/*.key.json
 .runtimeconfig*
+
+serverless

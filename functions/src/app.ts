@@ -78,6 +78,7 @@ const orderCheckSchema = checkSchema({
 app.get("/", (req, res) => res.sendStatus(200));
 app.get("/orders", orderController.allOrders);
 app.post("/orders", orderCheckSchema, orderController.createOrder);
+app.put("/orders", orderController.updateOrder);
 
 export default app;
 export const server = functions.https.onRequest(app);

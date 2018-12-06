@@ -2,15 +2,16 @@ import firebaseDb from "../util/firebaseDb";
 
 const COLLECTION_NAME = "order";
 
-export type Item = {
+export type APIItem = {
   id: string;
   amount: number;
   colorId: string;
+  fraganceId: string;
 };
 
 export type Order = {
   id: string;
-  items: Item[];
+  items: APIItem[];
   customer: any;
 };
 
@@ -22,11 +23,11 @@ export type OrderModel = {
 
 type getAllOrdersFunction = () => Promise<Order[]>;
 type getOrderByIdFunction = (orderId: string) => Order;
-type createOrderFunction = (items: Item[], customer: any) => String;
+type createOrderFunction = (items: APIItem[], customer: any) => String;
 
 const orderCollectionRef = firebaseDb.collection(COLLECTION_NAME);
 
-export async function createOrder(items: Item[], customer: any) {
+export async function createOrder(items: APIItem[], customer: any) {
   // TODO: usar customer
   const orderRef = await orderCollectionRef.add({
     items,

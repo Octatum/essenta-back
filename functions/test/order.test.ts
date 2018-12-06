@@ -27,20 +27,21 @@ describe("Orders", () => {
         .send({
           environment,
           items: {
-            "items": [{
-                "id": "5YPO1Smo3mcMoqkMcGOK0W",
-                "amount": "1",
-                "colorId": "4Cjuek1kdqgGswW0iOwawc",
-                "fraganceId": "52fomcNjNKAimUeOuM2QOq"
+            items: [
+              {
+                id: "5YPO1Smo3mcMoqkMcGOK0W",
+                amount: "1",
+                colorId: "4Cjuek1kdqgGswW0iOwawc",
+                fraganceId: "52fomcNjNKAimUeOuM2QOq",
               },
               {
-                "id": "69sC7kthhSEkYscyQu8WEQ",
-                "amount": "2",
-                "colorId": "592DUMfwiQQ64egUsOOaI4",
-                "fraganceId": "52fomcNjNKAimUeOuM2QOq"
-              }
-            ]
-          }
+                id: "69sC7kthhSEkYscyQu8WEQ",
+                amount: "2",
+                colorId: "592DUMfwiQQ64egUsOOaI4",
+                fraganceId: "52fomcNjNKAimUeOuM2QOq",
+              },
+            ],
+          },
         })
         .expect(200)
         .then(response => {

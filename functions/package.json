@@ -27,7 +27,9 @@
     "shell": "npm run build && firebase functions:shell",
     "start": "npm run shell",
     "deploy": "firebase deploy --only functions",
-    "logs": "firebase functions:log"
+    "logs": "firebase functions:log",
+    "netlify-serve": "netlify-lambda serve lib",
+    "netlify-build": "netlify-lambda build lib"
   },
   "dependencies": {
     "@types/node-fetch": "^2.1.4",
@@ -37,6 +39,7 @@
     "body-parser": "^1.18.3",
     "compression": "^1.7.3",
     "connect-mongo": "^2.0.3",
+    "contentful": "^7.0.5",
     "dotenv": "^4.0.0",
     "errorhandler": "^1.5.0",
     "express": "^4.16.4",
@@ -91,6 +94,7 @@
     "chai": "^4.2.0",
     "concurrently": "^3.6.1",
     "jest": "^22.4.4",
+    "netlify-lambda": "^1.1.0",
     "node-sass": "^4.11.0",
     "nodemon": "^1.18.7",
     "shelljs": "^0.8.3",
